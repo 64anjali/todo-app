@@ -1,9 +1,9 @@
-import { useState } from 'react'
 import TodoList from './components/TodoList'
 import AddTask from './components/AddTask'
 import Navbar from './components/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import { ToastContainer } from "react-toastify";
 
 function App() {
 
@@ -13,7 +13,9 @@ function App() {
     <Routes>
       <Route path="/" element={<TodoList/>}/>
       <Route path="/add-task" element={<AddTask/>}/>
+      <Route path="/edit-task/:id" element={<AddTask/>}/>
     </Routes>
+    <ToastContainer autoClose={1000}/>
     </>
   )
 }
